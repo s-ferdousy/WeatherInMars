@@ -1,0 +1,87 @@
+@media (min-width: 600px) {
+	.mars-current-weather {
+		display: grid;
+		row-gap: 2em;
+		grid-template-columns: repeat (2, 1fr);
+	}
+	.date {
+		grid-column: 1/-1;
+	}
+	.temp {
+		grid-column: 1/2;
+		padding: 0;
+	}
+	.wind {
+		grid-column: 2/3;
+	}
+}
+@media only screen and (min-width: 900px) {
+	:root {
+		--fs-h1: 1.25rem;
+		--fs-h2: 1.75rem;
+		--fs-body: 1rem;
+		--fs-xl: 4rem;
+	}
+	body {
+		height: 100vh;
+		overflow: hidden;
+	}
+	.date {
+		grid-column: 1/2;
+	}
+	.mars-current-weather {
+		padding: 2em;
+		margin: 4em 4em 0 4em;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		max-width: 1000px;
+		gap: 2em;
+	}
+	.temp {
+		grid-column: 2/3;
+		border-left: var(--border);
+		border-right: var(--border);
+		padding: 0 2em;
+	}
+	.wind {
+		grid-column: 3/-1;
+
+		.section-title,
+		.high__low {
+			grid-column: 2/3;
+		}
+		&__direction {
+			--size: 6rem;
+			width: var(--size);
+			height: var(--size);
+			background: var(--clr-gray);
+			border-radius: 50%;
+			display: grid;
+			place-content: center;
+			grid-column: 1/2;
+			grid-row: 1 / span 2;
+		}
+		&__arrow {
+			--size: 1rem;
+		}
+	}
+	.previous-weather {
+		bottom: 0;
+		top: unset;
+		right: unset;
+		height: unset;
+		width: 100%;
+		transform: translateY(70%);
+	}
+	.previous-days {
+		flex-direction: row;
+	}
+	.show-previous-weather {
+		transform: translateY(calc(-98% - 1rem));
+		left: 45%;
+		top: unset;
+	}
+	.show-weather.previous-weather {
+		transform: translateY(0);
+	}
+}
